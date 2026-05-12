@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(sudo chmod -R 755 /Users/balajivdongare/.npm/_cacache)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'Initial portfolio — Prestige Dark theme, React + Framer Motion *)"
+    ]
+  }
+}
