@@ -1,5 +1,12 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import {
+  SiGo, SiKubernetes, SiDocker, SiAmazonwebservices, SiGooglecloud,
+  SiTerraform, SiPulumi, SiArgo, SiMongodb, SiGithubactions,
+  SiElastic, SiSvelte, SiGrpc, SiYaml, SiAnthropic, SiGit,
+} from 'react-icons/si';
+import { FaShieldAlt, FaBrain, FaCode, FaRobot, FaServer } from 'react-icons/fa';
+import { VscTerminalCmd } from 'react-icons/vsc';
 
 const DOMAINS = [
   {
@@ -59,11 +66,30 @@ const DOMAINS = [
   },
 ];
 
+/* Each entry: { label, Icon, color, iconColor } */
 const TECH_STACK = [
-  'Go', 'Kubernetes', 'Docker', 'AWS', 'GCP', 'Terraform',
-  'Pulumi', 'ArgoCD', 'MongoDB', 'Saviynt', 'GitHub Actions',
-  'Elastic', 'REST API', 'gRPC', 'CEL', 'Svelte', 'YAML',
-  'Claude AI', 'Cursor AI', 'Prompt Engineering', 'LLM APIs',
+  { label: 'Go',              Icon: SiGo,                 color: '#00acd7' },
+  { label: 'Kubernetes',      Icon: SiKubernetes,         color: '#326ce5' },
+  { label: 'Docker',          Icon: SiDocker,             color: '#2496ed' },
+  { label: 'AWS',             Icon: SiAmazonwebservices,  color: '#ff9900' },
+  { label: 'GCP',             Icon: SiGooglecloud,        color: '#4285f4' },
+  { label: 'Terraform',       Icon: SiTerraform,          color: '#7b42bc' },
+  { label: 'Pulumi',          Icon: SiPulumi,             color: '#8a3391' },
+  { label: 'ArgoCD',          Icon: SiArgo,               color: '#ef7b4d' },
+  { label: 'MongoDB',         Icon: SiMongodb,            color: '#47a248' },
+  { label: 'GitHub Actions',  Icon: SiGithubactions,      color: '#2088ff' },
+  { label: 'Elastic',         Icon: SiElastic,            color: '#f04e98' },
+  { label: 'Svelte',          Icon: SiSvelte,             color: '#ff3e00' },
+  { label: 'gRPC',            Icon: SiGrpc,               color: '#244c5a' },
+  { label: 'YAML',            Icon: SiYaml,               color: '#cb171e' },
+  { label: 'IAM / Saviynt',   Icon: FaShieldAlt,          color: '#8b5cf6' },
+  { label: 'REST API',        Icon: FaServer,             color: '#64748b' },
+  { label: 'Claude AI',       Icon: SiAnthropic,          color: '#d97706' },
+  { label: 'Cursor AI',       Icon: FaBrain,              color: '#a78bfa' },
+  { label: 'Prompt Eng.',     Icon: VscTerminalCmd,       color: '#ec4899' },
+  { label: 'LLM APIs',        Icon: FaRobot,              color: '#06b6d4' },
+  { label: 'Git',             Icon: SiGit,                color: '#f05032' },
+  { label: 'CEL',             Icon: FaCode,               color: '#3b82f6' },
 ];
 
 function SkillBar({ name, pct, gradient, delay }) {
@@ -88,6 +114,41 @@ function SkillBar({ name, pct, gradient, delay }) {
   );
 }
 
+function TechPill({ label, Icon, color, delay }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.85 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.3 + delay * 0.04 }}
+      whileHover={{ y: -3, scale: 1.05, transition: { duration: 0.15 } }}
+      className="glass-card"
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '0.5rem',
+        padding: '1rem 0.75rem',
+        minWidth: '80px',
+        cursor: 'default',
+        borderRadius: '12px',
+      }}
+    >
+      <Icon style={{ fontSize: '1.6rem', color, flexShrink: 0 }} />
+      <span style={{
+        fontFamily: "'JetBrains Mono', monospace",
+        fontSize: '0.62rem',
+        color: '#64748b',
+        letterSpacing: '0.04em',
+        textAlign: 'center',
+        lineHeight: 1.3,
+      }}>
+        {label}
+      </span>
+    </motion.div>
+  );
+}
+
 export default function Skills() {
   return (
     <section id="skills" style={{ padding: '7rem 0', background: 'rgba(15,23,42,0.4)' }}>
@@ -109,8 +170,13 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        {/* Domain cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+        {/* Domain skill cards */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))',
+          gap: '1.5rem',
+          marginBottom: '4rem',
+        }}>
           {DOMAINS.map((d, di) => (
             <motion.div
               key={d.title}
@@ -121,7 +187,6 @@ export default function Skills() {
               transition={{ delay: di * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               style={{ padding: '2rem' }}
             >
-              {/* Domain title with gradient accent */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
                 <div style={{ width: '3px', height: '28px', borderRadius: '2px', background: d.gradient, flexShrink: 0 }} />
                 <h3 style={{ fontFamily: "'Syne'", fontWeight: 700, fontSize: '0.88rem', color: '#e2e8f0', letterSpacing: '-0.01em' }}>
@@ -135,36 +200,32 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Tech stack tags */}
+        {/* Icon tech grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.6 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
         >
           <div style={{
             fontFamily: "'JetBrains Mono'", fontSize: '0.65rem', color: '#334155',
             letterSpacing: '0.15em', textTransform: 'uppercase',
-            marginBottom: '1.2rem', textAlign: 'center',
+            marginBottom: '1.5rem', textAlign: 'center',
           }}>
             — Full Technology Stack —
           </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', justifyContent: 'center' }}>
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '0.75rem',
+            justifyContent: 'center',
+          }}>
             {TECH_STACK.map((t, i) => (
-              <motion.span
-                key={t}
-                className="pill"
-                initial={{ opacity: 0, scale: 0.85 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 + i * 0.04 }}
-                whileHover={{ borderColor: 'rgba(139,92,246,0.4)', color: '#a78bfa', transition: { duration: 0.15 } }}
-              >
-                {t}
-              </motion.span>
+              <TechPill key={t.label} label={t.label} Icon={t.Icon} color={t.color} delay={i} />
             ))}
           </div>
         </motion.div>
+
       </div>
     </section>
   );
