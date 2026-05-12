@@ -1,11 +1,8 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import {
-  SiGo, SiKubernetes, SiDocker, SiGooglecloud,
-  SiTerraform, SiPulumi, SiArgo, SiMongodb, SiGithubactions,
-  SiElastic, SiSvelte, SiYaml, SiAnthropic, SiGit,
-} from 'react-icons/si';
-import { FaShieldAlt, FaBrain, FaCode, FaRobot, FaServer, FaAws, FaExchangeAlt } from 'react-icons/fa';
+import StackIcon from 'tech-stack-icons';
+import { SiArgo, SiGithubactions } from 'react-icons/si';
+import { FaShieldAlt, FaCode, FaRobot, FaServer, FaExchangeAlt } from 'react-icons/fa';
 import { VscTerminalCmd } from 'react-icons/vsc';
 
 const DOMAINS = [
@@ -66,30 +63,33 @@ const DOMAINS = [
   },
 ];
 
-/* Each entry: { label, Icon, color, iconColor } */
+/* stackName → uses StackIcon from tech-stack-icons (full-color brand SVG)
+   Icon + iconColor → falls back to react-icons (single-color) */
 const TECH_STACK = [
-  { label: 'Go',              Icon: SiGo,                 color: '#00acd7' },
-  { label: 'Kubernetes',      Icon: SiKubernetes,         color: '#326ce5' },
-  { label: 'Docker',          Icon: SiDocker,             color: '#2496ed' },
-  { label: 'AWS',             Icon: FaAws,                color: '#ff9900' },
-  { label: 'GCP',             Icon: SiGooglecloud,        color: '#4285f4' },
-  { label: 'Terraform',       Icon: SiTerraform,          color: '#7b42bc' },
-  { label: 'Pulumi',          Icon: SiPulumi,             color: '#8a3391' },
-  { label: 'ArgoCD',          Icon: SiArgo,               color: '#ef7b4d' },
-  { label: 'MongoDB',         Icon: SiMongodb,            color: '#47a248' },
-  { label: 'GitHub Actions',  Icon: SiGithubactions,      color: '#2088ff' },
-  { label: 'Elastic',         Icon: SiElastic,            color: '#f04e98' },
-  { label: 'Svelte',          Icon: SiSvelte,             color: '#ff3e00' },
-  { label: 'gRPC',            Icon: FaExchangeAlt,        color: '#244c5a' },
-  { label: 'YAML',            Icon: SiYaml,               color: '#cb171e' },
-  { label: 'IAM / Saviynt',   Icon: FaShieldAlt,          color: '#8b5cf6' },
-  { label: 'REST API',        Icon: FaServer,             color: '#64748b' },
-  { label: 'Claude AI',       Icon: SiAnthropic,          color: '#d97706' },
-  { label: 'Cursor AI',       Icon: FaBrain,              color: '#a78bfa' },
-  { label: 'Prompt Eng.',     Icon: VscTerminalCmd,       color: '#ec4899' },
-  { label: 'LLM APIs',        Icon: FaRobot,              color: '#06b6d4' },
-  { label: 'Git',             Icon: SiGit,                color: '#f05032' },
-  { label: 'CEL',             Icon: FaCode,               color: '#3b82f6' },
+  { label: 'Go',              stackName: 'go' },
+  { label: 'Kubernetes',      stackName: 'kubernetes' },
+  { label: 'Docker',          stackName: 'docker' },
+  { label: 'AWS',             stackName: 'aws' },
+  { label: 'GCP',             stackName: 'gcloud' },
+  { label: 'Terraform',       stackName: 'terraform' },
+  { label: 'Pulumi',          stackName: 'pulumi' },
+  { label: 'ArgoCD',          Icon: SiArgo,           iconColor: '#ef7b4d' },
+  { label: 'MongoDB',         stackName: 'mongodb' },
+  { label: 'GitHub Actions',  Icon: SiGithubactions,  iconColor: '#2088ff' },
+  { label: 'Elastic',         stackName: 'elastic' },
+  { label: 'Svelte',          stackName: 'sveltejs' },
+  { label: 'gRPC',            Icon: FaExchangeAlt,    iconColor: '#60a5fa' },
+  { label: 'YAML',            stackName: 'yaml' },
+  { label: 'OpenAPI',         stackName: 'openapi' },
+  { label: 'IAM / Saviynt',   Icon: FaShieldAlt,      iconColor: '#8b5cf6' },
+  { label: 'Claude AI',       stackName: 'claude' },
+  { label: 'Anthropic',       stackName: 'anthropic' },
+  { label: 'Cursor AI',       stackName: 'cursor' },
+  { label: 'Prompt Eng.',     Icon: VscTerminalCmd,   iconColor: '#ec4899' },
+  { label: 'LLM APIs',        Icon: FaRobot,          iconColor: '#06b6d4' },
+  { label: 'Git',             stackName: 'git' },
+  { label: 'GitHub',          stackName: 'github' },
+  { label: 'CEL',             Icon: FaCode,           iconColor: '#3b82f6' },
 ];
 
 function SkillBar({ name, pct, gradient, delay }) {
@@ -114,30 +114,36 @@ function SkillBar({ name, pct, gradient, delay }) {
   );
 }
 
-function TechPill({ label, Icon, color, delay }) {
+function TechPill({ label, stackName, Icon, iconColor, delay }) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.85 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ delay: 0.3 + delay * 0.04 }}
-      whileHover={{ y: -3, scale: 1.05, transition: { duration: 0.15 } }}
+      whileHover={{ y: -4, scale: 1.06, transition: { duration: 0.15 } }}
       className="glass-card"
       style={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: '0.5rem',
-        padding: '1rem 0.75rem',
-        minWidth: '80px',
+        gap: '0.6rem',
+        padding: '1.1rem 0.9rem',
+        minWidth: '84px',
         cursor: 'default',
-        borderRadius: '12px',
+        borderRadius: '14px',
       }}
     >
-      <Icon style={{ fontSize: '1.6rem', color, flexShrink: 0 }} />
+      {stackName ? (
+        <span style={{ width: '2rem', height: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+          <StackIcon name={stackName} style={{ width: '100%', height: '100%' }} />
+        </span>
+      ) : (
+        <Icon style={{ fontSize: '1.8rem', color: iconColor, flexShrink: 0 }} />
+      )}
       <span style={{
         fontFamily: "'JetBrains Mono', monospace",
-        fontSize: '0.62rem',
+        fontSize: '0.6rem',
         color: '#64748b',
         letterSpacing: '0.04em',
         textAlign: 'center',
@@ -221,7 +227,14 @@ export default function Skills() {
             justifyContent: 'center',
           }}>
             {TECH_STACK.map((t, i) => (
-              <TechPill key={t.label} label={t.label} Icon={t.Icon} color={t.color} delay={i} />
+              <TechPill
+                key={t.label}
+                label={t.label}
+                stackName={t.stackName}
+                Icon={t.Icon}
+                iconColor={t.iconColor}
+                delay={i}
+              />
             ))}
           </div>
         </motion.div>
