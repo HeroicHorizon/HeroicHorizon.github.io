@@ -293,7 +293,7 @@ export default function Hero() {
         }}
         className="hero-photo-col"
       >
-        {/* Photo */}
+        {/* Photo — mirrored to face left toward the text */}
         <img
           src="/balaji.jpeg"
           alt="Balaji Dongare"
@@ -303,6 +303,7 @@ export default function Hero() {
             objectFit: 'cover',
             objectPosition: 'center top',
             display: 'block',
+            transform: 'scaleX(-1)',
             filter: 'brightness(0.9) contrast(1.05) saturate(0.92)',
           }}
         />
@@ -375,28 +376,34 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Floating exp badge — top right */}
+        {/* 8.9 Years badge — large, overlapping center of photo */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
+          initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.0, duration: 0.6 }}
+          transition={{ delay: 1.0, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            position: 'absolute', top: '12%', right: '8%', zIndex: 3,
-            background: 'rgba(15,23,42,0.75)',
-            backdropFilter: 'blur(20px)',
-            border: '1px solid rgba(139,92,246,0.25)',
-            borderRadius: '14px', padding: '1rem 1.3rem', textAlign: 'center',
+            position: 'absolute',
+            top: '50%', left: '50%',
+            transform: 'translate(-50%, -60%)',
+            zIndex: 4,
+            background: 'rgba(3,7,18,0.55)',
+            backdropFilter: 'blur(24px)',
+            border: '1px solid rgba(139,92,246,0.35)',
+            borderRadius: '20px',
+            padding: '1.5rem 2rem',
+            textAlign: 'center',
+            boxShadow: '0 8px 40px rgba(139,92,246,0.25), 0 0 0 1px rgba(99,102,241,0.15)',
           }}
         >
           <div style={{
-            fontFamily: "'Syne'", fontWeight: 800, fontSize: '2rem',
+            fontFamily: "'Syne'", fontWeight: 900, fontSize: '3.8rem',
             background: 'linear-gradient(135deg, #60a5fa, #a78bfa)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text', lineHeight: 1,
+            backgroundClip: 'text', lineHeight: 1, letterSpacing: '-0.03em',
           }}>
-            8.9
+            8.9<span style={{ fontSize: '1.8rem' }}>+</span>
           </div>
-          <div style={{ fontFamily: "'JetBrains Mono'", fontSize: '0.6rem', color: '#64748b', letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '0.25rem' }}>
+          <div style={{ fontFamily: "'JetBrains Mono'", fontSize: '0.65rem', color: '#64748b', letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '0.4rem' }}>
             Years Exp.
           </div>
         </motion.div>

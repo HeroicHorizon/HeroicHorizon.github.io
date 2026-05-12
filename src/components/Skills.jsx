@@ -1,11 +1,11 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import {
-  SiGo, SiKubernetes, SiDocker, SiAmazonwebservices, SiGooglecloud,
+  SiGo, SiKubernetes, SiDocker, SiGooglecloud,
   SiTerraform, SiPulumi, SiArgo, SiMongodb, SiGithubactions,
-  SiElastic, SiSvelte, SiGrpc, SiYaml, SiAnthropic, SiGit,
+  SiElastic, SiSvelte, SiYaml, SiAnthropic, SiGit,
 } from 'react-icons/si';
-import { FaShieldAlt, FaBrain, FaCode, FaRobot, FaServer } from 'react-icons/fa';
+import { FaShieldAlt, FaBrain, FaCode, FaRobot, FaServer, FaAws, FaExchangeAlt } from 'react-icons/fa';
 import { VscTerminalCmd } from 'react-icons/vsc';
 
 const DOMAINS = [
@@ -71,7 +71,7 @@ const TECH_STACK = [
   { label: 'Go',              Icon: SiGo,                 color: '#00acd7' },
   { label: 'Kubernetes',      Icon: SiKubernetes,         color: '#326ce5' },
   { label: 'Docker',          Icon: SiDocker,             color: '#2496ed' },
-  { label: 'AWS',             Icon: SiAmazonwebservices,  color: '#ff9900' },
+  { label: 'AWS',             Icon: FaAws,                color: '#ff9900' },
   { label: 'GCP',             Icon: SiGooglecloud,        color: '#4285f4' },
   { label: 'Terraform',       Icon: SiTerraform,          color: '#7b42bc' },
   { label: 'Pulumi',          Icon: SiPulumi,             color: '#8a3391' },
@@ -80,7 +80,7 @@ const TECH_STACK = [
   { label: 'GitHub Actions',  Icon: SiGithubactions,      color: '#2088ff' },
   { label: 'Elastic',         Icon: SiElastic,            color: '#f04e98' },
   { label: 'Svelte',          Icon: SiSvelte,             color: '#ff3e00' },
-  { label: 'gRPC',            Icon: SiGrpc,               color: '#244c5a' },
+  { label: 'gRPC',            Icon: FaExchangeAlt,        color: '#244c5a' },
   { label: 'YAML',            Icon: SiYaml,               color: '#cb171e' },
   { label: 'IAM / Saviynt',   Icon: FaShieldAlt,          color: '#8b5cf6' },
   { label: 'REST API',        Icon: FaServer,             color: '#64748b' },
