@@ -46,12 +46,24 @@ const DOMAINS = [
       { name: 'CI/CD & DevOps Culture', pct: 88 },
     ],
   },
+  {
+    title: 'AI Tools & Productivity',
+    gradient: 'linear-gradient(135deg, #ec4899, #a78bfa)',
+    skills: [
+      { name: 'Claude AI (Anthropic)', pct: 92 },
+      { name: 'Cursor AI (AI-first IDE)', pct: 90 },
+      { name: 'AI-Assisted Code Review', pct: 88 },
+      { name: 'Prompt Engineering', pct: 85 },
+      { name: 'LLM Integration & APIs', pct: 82 },
+    ],
+  },
 ];
 
 const TECH_STACK = [
   'Go', 'Kubernetes', 'Docker', 'AWS', 'GCP', 'Terraform',
   'Pulumi', 'ArgoCD', 'MongoDB', 'Saviynt', 'GitHub Actions',
   'Elastic', 'REST API', 'gRPC', 'CEL', 'Svelte', 'YAML',
+  'Claude AI', 'Cursor AI', 'Prompt Engineering', 'LLM APIs',
 ];
 
 function SkillBar({ name, pct, gradient, delay }) {
