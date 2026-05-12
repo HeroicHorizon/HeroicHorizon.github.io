@@ -53,28 +53,59 @@ export default function Hero() {
       }}
       className="hero-section"
     >
-      {/* Ambient glow blobs */}
+      {/* ── MIRROR GHOST — left background ── */}
+      {/* Flipped, blurred, low-opacity duplicate behind the text */}
+      <div style={{
+        position: 'absolute',
+        top: 0, left: 0,
+        width: '60%',
+        height: '100%',
+        zIndex: 0,
+        overflow: 'hidden',
+        pointerEvents: 'none',
+      }}>
+        <img
+          src="/balaji.jpeg"
+          alt=""
+          aria-hidden="true"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center top',
+            transform: 'scaleX(-1)',          /* mirror flip */
+            filter: 'blur(28px) brightness(0.18) saturate(0.6)',
+            opacity: 0.85,
+            display: 'block',
+          }}
+        />
+        {/* Gradient to pull mirror further into bg */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(to right, rgba(3,7,18,0.55) 0%, rgba(3,7,18,0.85) 100%)',
+        }} />
+      </div>
+
+      {/* Ambient blue glow blobs */}
       <div style={{
         position: 'absolute', top: '-10%', left: '-5%',
-        width: '600px', height: '600px', borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)',
-        pointerEvents: 'none', zIndex: 0,
-        filter: 'blur(40px)',
+        width: '500px', height: '500px', borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 70%)',
+        pointerEvents: 'none', zIndex: 0, filter: 'blur(40px)',
       }} />
       <div style={{
-        position: 'absolute', bottom: '-10%', left: '35%',
-        width: '500px', height: '500px', borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(139,92,246,0.07) 0%, transparent 70%)',
-        pointerEvents: 'none', zIndex: 0,
-        filter: 'blur(40px)',
+        position: 'absolute', bottom: '-5%', left: '30%',
+        width: '400px', height: '400px', borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%)',
+        pointerEvents: 'none', zIndex: 0, filter: 'blur(40px)',
       }} />
 
-      {/* ─── LEFT COLUMN ─── */}
+      {/* ─── LEFT COLUMN — text ─── */}
       <motion.div
         style={{
           padding: 'clamp(5rem, 10vw, 8rem) clamp(2rem, 5vw, 5rem)',
-          position: 'relative', zIndex: 1,
-          display: 'flex', flexDirection: 'column', gap: '0',
+          position: 'relative', zIndex: 2,
+          display: 'flex', flexDirection: 'column',
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -89,8 +120,7 @@ export default function Hero() {
         >
           <span style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-            padding: '0.35rem 1rem',
-            borderRadius: '100px',
+            padding: '0.35rem 1rem', borderRadius: '100px',
             border: '1px solid rgba(16,185,129,0.35)',
             background: 'rgba(16,185,129,0.08)',
             fontFamily: "'JetBrains Mono', monospace",
@@ -99,8 +129,7 @@ export default function Hero() {
           }}>
             <span style={{
               width: '6px', height: '6px', borderRadius: '50%',
-              background: '#10b981',
-              boxShadow: '0 0 8px #10b981',
+              background: '#10b981', boxShadow: '0 0 8px #10b981',
               animation: 'statusPulse 2s ease-in-out infinite',
               display: 'inline-block',
             }} />
@@ -114,13 +143,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            fontFamily: "'Syne', sans-serif",
-            fontWeight: 800,
+            fontFamily: "'Syne', sans-serif", fontWeight: 800,
             fontSize: 'clamp(2.8rem, 5.5vw, 4.8rem)',
-            lineHeight: 1.05,
-            letterSpacing: '-0.03em',
-            color: '#f1f5f9',
-            marginBottom: '0.25rem',
+            lineHeight: 1.05, letterSpacing: '-0.03em',
+            color: '#f1f5f9', marginBottom: '0.25rem',
           }}
         >
           Balaji
@@ -130,16 +156,12 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.28, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            fontFamily: "'Syne', sans-serif",
-            fontWeight: 800,
+            fontFamily: "'Syne', sans-serif", fontWeight: 800,
             fontSize: 'clamp(2.8rem, 5.5vw, 4.8rem)',
-            lineHeight: 1.05,
-            letterSpacing: '-0.03em',
+            lineHeight: 1.05, letterSpacing: '-0.03em',
             background: 'linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            marginBottom: '1.5rem',
+            WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text', marginBottom: '1.5rem',
           }}
         >
           Dongare
@@ -153,19 +175,15 @@ export default function Hero() {
           style={{
             fontFamily: "'JetBrains Mono', monospace",
             fontSize: 'clamp(0.85rem, 1.8vw, 1.05rem)',
-            color: '#94a3b8',
-            marginBottom: '1.5rem',
-            minHeight: '1.6rem',
-            display: 'flex', alignItems: 'center', gap: '0.3rem',
+            color: '#94a3b8', marginBottom: '1.5rem',
+            minHeight: '1.6rem', display: 'flex', alignItems: 'center', gap: '0.3rem',
           }}
         >
           <span style={{ color: '#7c3aed' }}>→</span>
           {' '}{role}
           <span style={{
-            width: '2px', height: '1em',
-            background: '#8b5cf6',
-            display: 'inline-block',
-            verticalAlign: 'text-bottom',
+            width: '2px', height: '1em', background: '#8b5cf6',
+            display: 'inline-block', verticalAlign: 'text-bottom',
             animation: 'blink 1s step-end infinite',
           }} />
         </motion.div>
@@ -176,11 +194,8 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.55 }}
           style={{
-            color: '#64748b',
-            fontSize: 'clamp(0.85rem, 1.3vw, 0.95rem)',
-            lineHeight: 1.85,
-            marginBottom: '2.5rem',
-            maxWidth: '440px',
+            color: '#64748b', fontSize: 'clamp(0.85rem, 1.3vw, 0.95rem)',
+            lineHeight: 1.85, marginBottom: '2.5rem', maxWidth: '440px',
           }}
         >
           8.9 years building scalable Golang microservices, enterprise IAM platforms,
@@ -224,13 +239,11 @@ export default function Hero() {
                 transition={{ delay: 0.85 + i * 0.08 }}
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: '0.35rem',
-                  padding: '0.3rem 0.75rem',
-                  borderRadius: '6px',
+                  padding: '0.3rem 0.75rem', borderRadius: '6px',
                   border: '1px solid rgba(245,158,11,0.25)',
                   background: 'rgba(245,158,11,0.06)',
                   fontFamily: "'JetBrains Mono'",
-                  fontSize: '0.65rem', color: '#fbbf24',
-                  letterSpacing: '0.05em',
+                  fontSize: '0.65rem', color: '#fbbf24', letterSpacing: '0.05em',
                 }}
               >
                 <span style={{ fontSize: '0.6rem' }}>★</span> {c}
@@ -267,19 +280,20 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* ─── RIGHT COLUMN — Photo ─── */}
+      {/* ─── RIGHT COLUMN — main photo ─── */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.15, duration: 1 }}
+        transition={{ delay: 0.2, duration: 1 }}
         style={{
           position: 'relative',
           height: '100vh',
           overflow: 'hidden',
+          zIndex: 1,
         }}
         className="hero-photo-col"
       >
-        {/* Photo fills full right column */}
+        {/* Photo */}
         <img
           src="/balaji.jpeg"
           alt="Balaji Dongare"
@@ -289,67 +303,63 @@ export default function Hero() {
             objectFit: 'cover',
             objectPosition: 'center top',
             display: 'block',
-            filter: 'brightness(0.88) contrast(1.05) saturate(0.9)',
+            filter: 'brightness(0.9) contrast(1.05) saturate(0.92)',
           }}
         />
 
-        {/* Left gradient fade — main blend into bg */}
+        {/* Left edge — main blend into dark bg */}
         <div style={{
           position: 'absolute', inset: 0,
           background: `linear-gradient(
             to right,
             #030712 0%,
-            rgba(3,7,18,0.85) 15%,
-            rgba(3,7,18,0.4) 30%,
+            rgba(3,7,18,0.9) 12%,
+            rgba(3,7,18,0.45) 28%,
             rgba(3,7,18,0.1) 50%,
             transparent 65%
           )`,
           zIndex: 1,
         }} />
 
-        {/* Top gradient fade */}
+        {/* Top fade */}
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(to bottom, #030712 0%, rgba(3,7,18,0.3) 15%, transparent 35%)',
+          background: 'linear-gradient(to bottom, #030712 0%, rgba(3,7,18,0.3) 12%, transparent 32%)',
           zIndex: 1,
         }} />
 
-        {/* Bottom gradient fade */}
+        {/* Bottom fade */}
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(to top, #030712 0%, rgba(3,7,18,0.5) 20%, transparent 45%)',
+          background: 'linear-gradient(to top, #030712 0%, rgba(3,7,18,0.5) 18%, transparent 42%)',
           zIndex: 1,
         }} />
 
         {/* Right edge fade */}
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(to left, #030712 0%, rgba(3,7,18,0.4) 10%, transparent 30%)',
+          background: 'linear-gradient(to left, #030712 0%, rgba(3,7,18,0.4) 8%, transparent 28%)',
           zIndex: 1,
         }} />
 
-        {/* Subtle color grade overlay — adds violet tint to match theme */}
+        {/* Violet colour grade */}
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'rgba(59,30,100,0.12)',
-          mixBlendMode: 'color',
-          zIndex: 2,
+          background: 'rgba(59,30,100,0.1)',
+          mixBlendMode: 'color', zIndex: 2,
         }} />
 
-        {/* Floating info card — bottom left of photo */}
+        {/* Floating name card — bottom left */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.7 }}
+          transition={{ delay: 0.9, duration: 0.7 }}
           style={{
-            position: 'absolute', bottom: '8%', left: '8%',
-            zIndex: 3,
-            background: 'rgba(15,23,42,0.7)',
+            position: 'absolute', bottom: '8%', left: '8%', zIndex: 3,
+            background: 'rgba(15,23,42,0.75)',
             backdropFilter: 'blur(20px)',
             border: '1px solid rgba(255,255,255,0.08)',
-            borderRadius: '14px',
-            padding: '1rem 1.4rem',
-            minWidth: '200px',
+            borderRadius: '14px', padding: '1rem 1.4rem', minWidth: '200px',
           }}
         >
           <div style={{ fontFamily: "'Syne'", fontWeight: 700, fontSize: '1rem', color: '#f1f5f9', marginBottom: '0.2rem' }}>
@@ -365,20 +375,17 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Floating exp badge — top right of photo */}
+        {/* Floating exp badge — top right */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.0, duration: 0.6 }}
           style={{
-            position: 'absolute', top: '12%', right: '8%',
-            zIndex: 3,
-            background: 'rgba(15,23,42,0.7)',
+            position: 'absolute', top: '12%', right: '8%', zIndex: 3,
+            background: 'rgba(15,23,42,0.75)',
             backdropFilter: 'blur(20px)',
             border: '1px solid rgba(139,92,246,0.25)',
-            borderRadius: '14px',
-            padding: '1rem 1.3rem',
-            textAlign: 'center',
+            borderRadius: '14px', padding: '1rem 1.3rem', textAlign: 'center',
           }}
         >
           <div style={{
