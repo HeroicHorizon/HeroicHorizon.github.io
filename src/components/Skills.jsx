@@ -2,63 +2,68 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import StackIcon from 'tech-stack-icons';
 import { SiArgo, SiGithubactions } from 'react-icons/si';
-import { FaShieldAlt, FaCode, FaRobot, FaServer, FaExchangeAlt } from 'react-icons/fa';
+import {
+  FaShieldAlt, FaCode, FaRobot, FaServer, FaExchangeAlt,
+  FaKey, FaUserShield, FaUsers, FaCloud, FaHandshake,
+  FaCogs, FaBrain, FaNetworkWired, FaProjectDiagram,
+} from 'react-icons/fa';
 import { VscTerminalCmd } from 'react-icons/vsc';
 
+/* icon descriptor: { s: 'stackName' } or { I: ReactIconComponent, c: '#color' } */
 const DOMAINS = [
   {
     title: 'Golang & Microservices',
     gradient: 'linear-gradient(135deg, #3b82f6, #60a5fa)',
     skills: [
-      { name: 'Go (Golang)', pct: 96 },
-      { name: 'REST API Design', pct: 94 },
-      { name: 'Microservices Architecture', pct: 92 },
-      { name: 'Open Service Broker', pct: 82 },
-      { name: 'System Design', pct: 90 },
+      { name: 'Go (Golang)',               pct: 96, icon: { s: 'go' } },
+      { name: 'REST API Design',           pct: 94, icon: { s: 'openapi' } },
+      { name: 'Microservices Architecture',pct: 92, icon: { I: FaNetworkWired,    c: '#60a5fa' } },
+      { name: 'Open Service Broker',       pct: 82, icon: { I: FaServer,          c: '#60a5fa' } },
+      { name: 'System Design',             pct: 90, icon: { I: FaProjectDiagram,  c: '#60a5fa' } },
     ],
   },
   {
     title: 'Identity & Access Management',
     gradient: 'linear-gradient(135deg, #8b5cf6, #a78bfa)',
     skills: [
-      { name: 'IAM Architecture', pct: 93 },
-      { name: 'OAuth2 / OIDC / SSO', pct: 90 },
-      { name: 'Saviynt Platform', pct: 88 },
-      { name: 'RBAC / ABAC / Zero Trust', pct: 88 },
-      { name: 'CEL (Common Expression Lang)', pct: 82 },
+      { name: 'IAM Architecture',          pct: 93, icon: { I: FaShieldAlt,   c: '#a78bfa' } },
+      { name: 'OAuth2 / OIDC / SSO',       pct: 90, icon: { I: FaKey,         c: '#a78bfa' } },
+      { name: 'Saviynt Platform',          pct: 88, icon: { I: FaUserShield,  c: '#a78bfa' } },
+      { name: 'RBAC / ABAC / Zero Trust',  pct: 88, icon: { I: FaUserShield,  c: '#a78bfa' } },
+      { name: 'CEL (Common Expression Lang)',pct: 82, icon: { I: FaCode,       c: '#a78bfa' } },
     ],
   },
   {
     title: 'Cloud & DevOps',
     gradient: 'linear-gradient(135deg, #10b981, #34d399)',
     skills: [
-      { name: 'Kubernetes (CKAD)', pct: 93 },
-      { name: 'AWS (Solutions Architect)', pct: 90 },
-      { name: 'GCP (Cloud Architect)', pct: 88 },
-      { name: 'Terraform / Pulumi', pct: 87 },
-      { name: 'ArgoCD / GitHub Actions', pct: 86 },
+      { name: 'Kubernetes (CKAD)',          pct: 93, icon: { s: 'kubernetes' } },
+      { name: 'AWS (Solutions Architect)',  pct: 90, icon: { s: 'aws' } },
+      { name: 'GCP (Cloud Architect)',      pct: 88, icon: { s: 'gcloud' } },
+      { name: 'Terraform / Pulumi',         pct: 87, icon: { s: 'terraform' } },
+      { name: 'ArgoCD / GitHub Actions',    pct: 86, icon: { I: SiArgo, c: '#ef7b4d' } },
     ],
   },
   {
     title: 'Leadership & Architecture',
     gradient: 'linear-gradient(135deg, #f59e0b, #fbbf24)',
     skills: [
-      { name: 'Technical Leadership', pct: 90 },
-      { name: 'Serverless Architecture', pct: 85 },
-      { name: 'Stakeholder Management', pct: 87 },
-      { name: 'Code Review & Mentoring', pct: 92 },
-      { name: 'CI/CD & DevOps Culture', pct: 88 },
+      { name: 'Technical Leadership',      pct: 90, icon: { I: FaUsers,      c: '#fbbf24' } },
+      { name: 'Serverless Architecture',   pct: 85, icon: { I: FaCloud,      c: '#fbbf24' } },
+      { name: 'Stakeholder Management',    pct: 87, icon: { I: FaHandshake,  c: '#fbbf24' } },
+      { name: 'Code Review & Mentoring',   pct: 92, icon: { I: FaCode,       c: '#fbbf24' } },
+      { name: 'CI/CD & DevOps Culture',    pct: 88, icon: { I: FaCogs,       c: '#fbbf24' } },
     ],
   },
   {
     title: 'AI Tools & Productivity',
     gradient: 'linear-gradient(135deg, #ec4899, #a78bfa)',
     skills: [
-      { name: 'Claude AI (Anthropic)', pct: 92 },
-      { name: 'Cursor AI (AI-first IDE)', pct: 90 },
-      { name: 'AI-Assisted Code Review', pct: 88 },
-      { name: 'Prompt Engineering', pct: 85 },
-      { name: 'LLM Integration & APIs', pct: 82 },
+      { name: 'Claude AI (Anthropic)',     pct: 92, icon: { s: 'claude' } },
+      { name: 'Cursor AI (AI-first IDE)',  pct: 90, icon: { s: 'cursor' } },
+      { name: 'AI-Assisted Code Review',  pct: 88, icon: { I: FaBrain,       c: '#ec4899' } },
+      { name: 'Prompt Engineering',       pct: 85, icon: { I: VscTerminalCmd, c: '#ec4899' } },
+      { name: 'LLM Integration & APIs',   pct: 82, icon: { I: FaRobot,       c: '#ec4899' } },
     ],
   },
 ];
@@ -92,14 +97,30 @@ const TECH_STACK = [
   { label: 'CEL',             Icon: FaCode,           iconColor: '#3b82f6' },
 ];
 
-function SkillBar({ name, pct, gradient, delay }) {
+function SkillIcon({ icon }) {
+  if (!icon) return null;
+  if (icon.s) {
+    return (
+      <span style={{ width: '1rem', height: '1rem', display: 'inline-flex', alignItems: 'center', flexShrink: 0 }}>
+        <StackIcon name={icon.s} style={{ width: '100%', height: '100%' }} />
+      </span>
+    );
+  }
+  const Ic = icon.I;
+  return <Ic style={{ fontSize: '0.85rem', color: icon.c, flexShrink: 0 }} />;
+}
+
+function SkillBar({ name, pct, gradient, delay, icon }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
   return (
     <div ref={ref} style={{ marginBottom: '0.85rem' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.3rem' }}>
-        <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>{name}</span>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+          <SkillIcon icon={icon} />
+          <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>{name}</span>
+        </div>
         <span style={{ fontFamily: "'JetBrains Mono'", fontSize: '0.68rem', color: '#475569' }}>{pct}%</span>
       </div>
       <div style={{ height: '3px', background: 'rgba(255,255,255,0.04)', borderRadius: '2px', overflow: 'hidden' }}>
@@ -200,7 +221,14 @@ export default function Skills() {
                 </h3>
               </div>
               {d.skills.map((s, si) => (
-                <SkillBar key={s.name} name={s.name} pct={s.pct} gradient={d.gradient} delay={di * 0.1 + si * 0.1} />
+                <SkillBar
+                  key={s.name}
+                  name={s.name}
+                  pct={s.pct}
+                  gradient={d.gradient}
+                  delay={di * 0.1 + si * 0.1}
+                  icon={s.icon}
+                />
               ))}
             </motion.div>
           ))}
