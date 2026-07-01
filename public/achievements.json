@@ -1,26 +1,26 @@
 {
   "version": 1,
-  "lastSynced": "2026-07-01T12:00:13.465Z",
+  "lastSynced": "2026-07-01T16:56:47.669Z",
   "status": "success",
   "providers": {
     "credly": {
       "status": "success",
-      "lastSynced": "2026-07-01T12:00:13.465Z",
+      "lastSynced": "2026-07-01T16:56:47.669Z",
       "error": null,
       "source": "https://www.credly.com/users/balaji-dongare.28c183bc/badges.json",
       "cache": {
-        "etag": "W/\"bfc2a0eeb8afb3fc72fb39352a216775\"",
+        "etag": "W/\"cdaa4875aabad3cd440a629bdea0c749\"",
         "lastModified": null
       }
     }
   },
   "counts": {
-    "total": 9,
+    "total": 10,
     "active": 9,
-    "inactive": 0,
-    "added": 0,
+    "inactive": 1,
+    "added": 1,
     "updated": 0,
-    "deactivated": 0
+    "deactivated": 1
   },
   "badges": [
     {
@@ -43,7 +43,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T12:00:13.465Z",
+      "lastSeen": "2026-07-01T16:56:47.669Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     },
     {
@@ -65,7 +65,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T12:00:13.465Z",
+      "lastSeen": "2026-07-01T16:56:47.669Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     },
     {
@@ -87,7 +87,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T12:00:13.465Z",
+      "lastSeen": "2026-07-01T16:56:47.669Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     },
     {
@@ -109,7 +109,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T12:00:13.465Z",
+      "lastSeen": "2026-07-01T16:56:47.669Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     },
     {
@@ -132,7 +132,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T12:00:13.465Z",
+      "lastSeen": "2026-07-01T16:56:47.669Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     },
     {
@@ -154,7 +154,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T12:00:13.465Z",
+      "lastSeen": "2026-07-01T16:56:47.669Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     },
     {
@@ -183,7 +183,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T12:00:13.465Z",
+      "lastSeen": "2026-07-01T16:56:47.669Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     },
     {
@@ -211,10 +211,41 @@
         "Scalability",
         "workload migration"
       ],
-      "active": true,
+      "active": false,
       "firstSeen": "2026-07-01T11:51:43.206Z",
       "lastSeen": "2026-07-01T12:00:13.465Z",
-      "lastUpdated": "2026-07-01T11:51:43.206Z"
+      "lastUpdated": "2026-07-01T11:51:43.206Z",
+      "deactivatedAt": "2026-07-01T16:56:47.669Z"
+    },
+    {
+      "id": "a2c1f086-8814-4c16-a7ac-e1182ae5a909",
+      "provider": "credly",
+      "title": "Professional Cloud Architect Certification",
+      "issuer": "Google Cloud",
+      "issuerKey": "gcloud",
+      "image": "https://images.credly.com/images/71c579e0-51fd-4247-b493-d2fa8167157a/image.png",
+      "verifyUrl": "https://www.credly.com/badges/a2c1f086-8814-4c16-a7ac-e1182ae5a909",
+      "publicUrl": "https://www.credly.com/org/google-cloud/badge/professional-cloud-architect-certification",
+      "issueDate": "2024-02-06",
+      "dateLabel": "Feb 2024",
+      "description": "Professional Cloud Architects enable organizations to leverage Google Cloud technologies. With a thorough understanding of cloud architecture and Google Cloud, they design, develop, and manage robust, secure, scalable, highly available, and dynamic solutions to drive business objectives.",
+      "skills": [
+        "Cloud Architecture",
+        "Cloud Computing",
+        "Cloud Security",
+        "Cloud Storage",
+        "Databases",
+        "GKE",
+        "Google Cloud Platform (GCP)",
+        "Identity And Access Management (IAM)",
+        "Networking",
+        "Scalability",
+        "workload migration"
+      ],
+      "active": true,
+      "firstSeen": "2026-07-01T16:56:47.669Z",
+      "lastSeen": "2026-07-01T16:56:47.669Z",
+      "lastUpdated": "2026-07-01T16:56:47.669Z"
     },
     {
       "id": "1458cad3-a85c-4f96-8cab-1769dadaf27f",
@@ -244,7 +275,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T12:00:13.465Z",
+      "lastSeen": "2026-07-01T16:56:47.669Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     }
   ]
