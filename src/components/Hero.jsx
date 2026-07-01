@@ -383,26 +383,26 @@ export default function Hero() {
           transition={{ delay: 1.0, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           style={{
             position: 'absolute',
-            top: '14%', right: '6%',
+            top: 'clamp(4.5rem, 12%, 6rem)', right: 'clamp(1rem, 4%, 3rem)',
             zIndex: 4,
             background: 'rgba(3,7,18,0.55)',
             backdropFilter: 'blur(24px)',
             border: '1px solid rgba(139,92,246,0.35)',
-            borderRadius: '20px',
-            padding: '1.5rem 2rem',
+            borderRadius: '18px',
+            padding: 'clamp(0.8rem, 1.6vw, 1.5rem) clamp(1rem, 2vw, 2rem)',
             textAlign: 'center',
             boxShadow: '0 8px 40px rgba(139,92,246,0.25), 0 0 0 1px rgba(99,102,241,0.15)',
           }}
         >
           <div style={{
-            fontFamily: "'Syne'", fontWeight: 900, fontSize: '3.8rem',
+            fontFamily: "'Syne'", fontWeight: 900, fontSize: 'clamp(2rem, 3.4vw, 3.8rem)',
             background: 'linear-gradient(135deg, #60a5fa, #a78bfa)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
             backgroundClip: 'text', lineHeight: 1, letterSpacing: '-0.03em',
           }}>
-            8.9<span style={{ fontSize: '1.8rem' }}>+</span>
+            8.9<span style={{ fontSize: '0.5em' }}>+</span>
           </div>
-          <div style={{ fontFamily: "'JetBrains Mono'", fontSize: '0.65rem', color: '#64748b', letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '0.4rem' }}>
+          <div style={{ fontFamily: "'JetBrains Mono'", fontSize: 'clamp(0.55rem, 0.9vw, 0.65rem)', color: '#64748b', letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '0.4rem' }}>
             Years Exp.
           </div>
         </motion.div>
