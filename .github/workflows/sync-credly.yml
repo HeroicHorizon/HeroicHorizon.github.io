@@ -1,0 +1,50 @@
+name: Sync Credly Achievements
+
+on:
+  schedule:
+    - cron: '0 * * * *' # hourly, on the hour
+  workflow_dispatch: # enables the "Sync Now" button / manual runs
+
+# Prevent overlapping sync runs.
+concurrency:
+  group: sync-credly
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run sync
+        env:
+          # Optional override; falls back to the default in scripts/sync/config.js.
+          CREDLY_PROFILE_URL: ${{ vars.CREDLY_PROFILE_URL }}
+          SYNC_LOG_LEVEL: info
+        run: npm run sync
+
+      - name: Commit updated store
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- public/achievements.json; then
+            echo "No achievement changes to commit."
+          else
+            git add public/achievements.json
+            git commit -m "chore(sync): update Credly achievements"
+            git push
+            echo "Committed updated achievements store (triggers deploy)."
+          fi
