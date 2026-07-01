@@ -414,7 +414,7 @@ export default function Hero() {
           0%, 100% { box-shadow: 0 0 8px #10b981; }
           50% { box-shadow: 0 0 16px #10b981, 0 0 32px rgba(16,185,129,0.4); }
         }
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
           .hero-section { grid-template-columns: 1fr !important; }
           .hero-photo-col { display: none !important; }
         }
