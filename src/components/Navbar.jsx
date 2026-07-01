@@ -5,6 +5,7 @@ import { Link } from 'react-scroll';
 const LINKS = [
   { label: 'About', to: 'about' },
   { label: 'Skills', to: 'skills' },
+  { label: 'Achievements', to: 'achievements' },
   { label: 'Experience', to: 'experience' },
   { label: 'Projects', to: 'projects' },
   { label: 'Contact', to: 'contact' },
