@@ -356,7 +356,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.7 }}
           style={{
-            position: 'absolute', bottom: '8%', left: '8%', zIndex: 3,
+            position: 'absolute', bottom: '7%', left: '5%', zIndex: 3,
             background: 'rgba(15,23,42,0.75)',
             backdropFilter: 'blur(20px)',
             border: '1px solid rgba(255,255,255,0.08)',
@@ -376,15 +376,14 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* 8.9 Years badge — large, overlapping center of photo */}
+        {/* 8.9 Years badge — floats in the dark top-right corner, clear of the subject */}
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.0, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           style={{
             position: 'absolute',
-            top: '50%', left: '50%',
-            transform: 'translate(-50%, -60%)',
+            top: '14%', right: '6%',
             zIndex: 4,
             background: 'rgba(3,7,18,0.55)',
             backdropFilter: 'blur(24px)',
