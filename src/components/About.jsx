@@ -1,5 +1,36 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
+
+/* Animated count-up that runs once when scrolled into view.
+   Parses values like "8.9+", "100+", "4" into number + suffix. */
+function StatValue({ value }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-40px' });
+  const [display, setDisplay] = useState('0');
+
+  const match = String(value).match(/^([\d.]+)(.*)$/);
+  const target = match ? parseFloat(match[1]) : 0;
+  const suffix = match ? match[2] : '';
+  const decimals = match && match[1].includes('.') ? 1 : 0;
+
+  useEffect(() => {
+    if (!inView) return;
+    let raf;
+    let start;
+    const dur = 1400;
+    const step = (t) => {
+      if (!start) start = t;
+      const p = Math.min(1, (t - start) / dur);
+      const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+      setDisplay((target * eased).toFixed(decimals));
+      if (p < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [inView, target, decimals]);
+
+  return <span ref={ref}>{display}{suffix}</span>;
+}
 
 const STATS = [
   { value: '8.9+', label: 'Years Experience', icon: '◆' },
@@ -96,7 +127,7 @@ export default function About() {
                     background: 'linear-gradient(135deg, #60a5fa, #a78bfa)',
                     WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
                     marginBottom: '0.4rem',
-                  }}>{s.value}</div>
+                  }}><StatValue value={s.value} /></div>
                   <div style={{ fontFamily: "'JetBrains Mono'", fontSize: '0.62rem', color: '#475569', letterSpacing: '0.1em', textTransform: 'uppercase' }}>{s.label}</div>
                 </div>
               ))}

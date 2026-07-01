@@ -1,4 +1,5 @@
 import './index.css'
+import FxLayer from './components/FxLayer'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -13,6 +14,7 @@ export default function App() {
     <>
       <div className="grid-bg" />
       <div className="scanlines" />
+      <FxLayer />
       <Navbar />
       <main>
         <Hero />

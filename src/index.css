@@ -66,18 +66,114 @@ section { position: relative; z-index: 1; }
   background-clip: text;
 }
 
-/* Glass card */
+/* Glass card — with cursor-tracking spotlight baked into the background layer
+   (behind content, so it never washes out text). --mx/--my set by FxLayer. */
 .glass-card {
-  background: var(--glass);
+  position: relative;
+  background:
+    radial-gradient(280px circle at var(--mx, 50%) var(--my, -30%),
+      rgba(139, 92, 246, 0.16), transparent 60%),
+    var(--glass);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 .glass-card:hover {
   border-color: var(--glass-border-hover);
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.08);
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.10);
+}
+
+/* ─────────────  Ambient background layers  ───────────── */
+/* Perspective-fading tech grid (activates the .grid-bg div in App.jsx) */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.045) 1px, transparent 1px);
+  background-size: 62px 62px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 25%, transparent 72%);
+  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 25%, transparent 72%);
+}
+
+/* Faint drifting aurora + CRT scanlines (activates the .scanlines div) */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.scanlines::before {
+  content: '';
+  position: absolute;
+  inset: -20% -20% auto -20%;
+  height: 70%;
+  background:
+    radial-gradient(40% 60% at 20% 20%, rgba(59, 130, 246, 0.10), transparent 70%),
+    radial-gradient(40% 60% at 80% 10%, rgba(139, 92, 246, 0.10), transparent 70%);
+  filter: blur(30px);
+}
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    rgba(0, 0, 0, 0.10) 3px,
+    transparent 4px
+  );
+}
+
+/* Cursor flashlight — additive glow that follows the pointer (set by FxLayer) */
+#cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 520px;
+  height: 520px;
+  margin: -260px 0 0 -260px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(96, 165, 250, 0.10) 0%,
+    rgba(139, 92, 246, 0.07) 38%,
+    transparent 68%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0;
+  transform: translate(-1000px, -1000px);
+  transition: opacity 0.35s ease;
+  will-change: transform;
+}
+
+/* Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #60a5fa);
+  z-index: 1001;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .grad-text {
+    background-size: 220% auto;
+    animation: gradShimmer 7s ease-in-out infinite;
+  }
+}
+@keyframes gradShimmer {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
 }
 
 /* Section header */
