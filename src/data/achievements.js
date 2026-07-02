@@ -2,14 +2,14 @@
 // The live data is fetched at runtime from /achievements.json (written by the sync service).
 // This snapshot only renders if that fetch fails or before it resolves.
 const ACHIEVEMENTS_SEED = {
-  "lastSynced": "2026-07-01T11:51:58.671Z",
+  "lastSynced": "2026-07-02T06:39:18.116Z",
   "status": "success",
   "counts": {
-    "total": 9,
-    "active": 9,
-    "inactive": 0,
+    "total": 11,
+    "active": 10,
+    "inactive": 1,
     "added": 0,
-    "updated": 0,
+    "updated": 10,
     "deactivated": 0
   },
   "badges": [
@@ -21,7 +21,7 @@ const ACHIEVEMENTS_SEED = {
       "issuerKey": "gcloud",
       "image": "https://images.credly.com/images/73e93208-0df3-435d-b58c-07c8ee6019d9/blob",
       "verifyUrl": "https://www.credly.com/badges/e7963a87-5c5c-4f21-a524-9a46fd2492da",
-      "publicUrl": "https://www.credly.com/org/google-cloud/badge/certified-partner-specialist-gemini-enterprise-agen",
+      "publicUrl": "https://www.credly.com/badges/e7963a87-5c5c-4f21-a524-9a46fd2492da/public_url",
       "issueDate": "2026-06-27",
       "dateLabel": "Jun 2026",
       "description": "The Certified Partner Specialist: Gemini Enterprise Agent Development certification demonstrates a specialty in working with coding agents using agent-specific skills, building agents using Agent Development Kit (ADK), enhancing their capabilities with protocols like MCP and A2A, engineering sessions and memory, and governing agentic ecosystems.",
@@ -33,8 +33,8 @@ const ACHIEVEMENTS_SEED = {
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T11:51:58.671Z",
-      "lastUpdated": "2026-07-01T11:51:43.206Z"
+      "lastSeen": "2026-07-02T06:39:18.116Z",
+      "lastUpdated": "2026-07-02T06:39:18.116Z"
     },
     {
       "id": "c1afca4b-f9ef-48b9-91e0-789637286aef",
@@ -44,7 +44,7 @@ const ACHIEVEMENTS_SEED = {
       "issuerKey": "gcloud",
       "image": "https://images.credly.com/images/e9c45e2a-a48e-4686-99df-7de0ccd6dae7/blob",
       "verifyUrl": "https://www.credly.com/badges/c1afca4b-f9ef-48b9-91e0-789637286aef",
-      "publicUrl": "https://www.credly.com/org/google-cloud/badge/deploy-an-agent-with-agent-development-kit-adk",
+      "publicUrl": "https://www.credly.com/badges/c1afca4b-f9ef-48b9-91e0-789637286aef/public_url",
       "issueDate": "2026-06-27",
       "dateLabel": "Jun 2026",
       "description": "Complete the Deploy an Agent with Agent Development Kit (ADK) skill badge to demonstrate your ability to author agents using Agent Development Kit (ADK), deploy those agents to Agent Engine, and call the hosted agent from a web app.",
@@ -55,8 +55,8 @@ const ACHIEVEMENTS_SEED = {
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T11:51:58.671Z",
-      "lastUpdated": "2026-07-01T11:51:43.206Z"
+      "lastSeen": "2026-07-02T06:39:18.116Z",
+      "lastUpdated": "2026-07-02T06:39:18.116Z"
     },
     {
       "id": "33285f25-20e2-452e-9bf3-48896e73d844",
@@ -66,7 +66,7 @@ const ACHIEVEMENTS_SEED = {
       "issuerKey": "gcloud",
       "image": "https://images.credly.com/images/b1800059-b7de-4065-851d-678287ea0720/blob",
       "verifyUrl": "https://www.credly.com/badges/33285f25-20e2-452e-9bf3-48896e73d844",
-      "publicUrl": "https://www.credly.com/org/google-cloud/badge/evaluate-and-improve-agent-development-kit-agents",
+      "publicUrl": "https://www.credly.com/badges/33285f25-20e2-452e-9bf3-48896e73d844/public_url",
       "issueDate": "2026-06-23",
       "dateLabel": "Jun 2026",
       "description": "Complete the Evaluate and Improve Agent Development Kit Agents skill badge to demonstrate your ability to use ADK's evaluation tools to \"hill climb\", making measurable, iterative improvements to an agent. You will run an initial evaluation to establish a baseline, apply optimization techniques, and re-evaluate the agent to measure your success.",
@@ -77,8 +77,8 @@ const ACHIEVEMENTS_SEED = {
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T11:51:58.671Z",
-      "lastUpdated": "2026-07-01T11:51:43.206Z"
+      "lastSeen": "2026-07-02T06:39:18.116Z",
+      "lastUpdated": "2026-07-02T06:39:18.116Z"
     },
     {
       "id": "4a5e5d64-d649-4e5b-9bae-05176749ebf9",
@@ -88,7 +88,7 @@ const ACHIEVEMENTS_SEED = {
       "issuerKey": "gcloud",
       "image": "https://images.credly.com/images/951db2d7-4997-4b2a-89de-1a1297236e77/blob",
       "verifyUrl": "https://www.credly.com/badges/4a5e5d64-d649-4e5b-9bae-05176749ebf9",
-      "publicUrl": "https://www.credly.com/org/google-cloud/badge/orchestrate-multi-agent-workflows-with-gemini-enter",
+      "publicUrl": "https://www.credly.com/badges/4a5e5d64-d649-4e5b-9bae-05176749ebf9/public_url",
       "issueDate": "2026-06-23",
       "dateLabel": "Jun 2026",
       "description": "Complete the Orchestrate Multi-Agent Workflows with Gemini Enterprise skill badge to demonstrate skills in the following: using agentic assistants powered by Gemini Enterprise to unify data across first- and third-party sources, develop multimedia marketing materials, and automate business actions across systems.",
@@ -99,8 +99,8 @@ const ACHIEVEMENTS_SEED = {
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T11:51:58.671Z",
-      "lastUpdated": "2026-07-01T11:51:43.206Z"
+      "lastSeen": "2026-07-02T06:39:18.116Z",
+      "lastUpdated": "2026-07-02T06:39:18.116Z"
     },
     {
       "id": "66c9c92a-1aeb-447e-a385-889658c04a49",
@@ -110,7 +110,7 @@ const ACHIEVEMENTS_SEED = {
       "issuerKey": "gcloud",
       "image": "https://images.credly.com/images/9a9bd5ca-b41b-41ed-82ad-43968d960f62/blob",
       "verifyUrl": "https://www.credly.com/badges/66c9c92a-1aeb-447e-a385-889658c04a49",
-      "publicUrl": "https://www.credly.com/org/google-cloud/badge/accelerate-development-with-antigravity",
+      "publicUrl": "https://www.credly.com/badges/66c9c92a-1aeb-447e-a385-889658c04a49/public_url",
       "issueDate": "2026-06-22",
       "dateLabel": "Jun 2026",
       "description": "Complete the Accelerate Development with Antigravity skill badge to demonstrate your proficiency in using the Antigravity IDE for developing agentic workflows. You will be tasked with configuring an MCP server, authoring custom agent skills and rules, prototyping with the Agents CLI, and deploying to the Google Cloud Agent Runtime.",
@@ -122,8 +122,38 @@ const ACHIEVEMENTS_SEED = {
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T11:51:58.671Z",
-      "lastUpdated": "2026-07-01T11:51:43.206Z"
+      "lastSeen": "2026-07-02T06:39:18.116Z",
+      "lastUpdated": "2026-07-02T06:39:18.116Z"
+    },
+    {
+      "id": "fe982c31-e8f4-4a66-b80d-087d07683770",
+      "provider": "credly",
+      "title": "Claude Certified Architect - Foundations",
+      "issuer": "Anthropic",
+      "issuerKey": "anthropic",
+      "image": "https://images.credly.com/images/f2040db3-3904-4240-8966-e87b1510bea0/blob",
+      "verifyUrl": "https://www.credly.com/badges/fe982c31-e8f4-4a66-b80d-087d07683770",
+      "publicUrl": "https://www.credly.com/badges/fe982c31-e8f4-4a66-b80d-087d07683770/public_url",
+      "issueDate": "2026-05-30",
+      "dateLabel": "May 2026",
+      "description": "The Claude Certified Architect – Foundations credential is designed for solution architects. Earners can design and build production-grade applications with Claude using Claude Code, the Claude Agent SDK, the Claude API, and MCP.",
+      "skills": [
+        "AI System Design",
+        "Claude Agent SDK",
+        "Claude Code configuration",
+        "Context Management",
+        "Generative AI Architecture",
+        "Large Language Models (LLMs)",
+        "Multi-Agent Orchestration",
+        "Production reliability",
+        "Prompt Engineering",
+        "Structured output",
+        "Tool & MCP design"
+      ],
+      "active": true,
+      "firstSeen": "2026-07-02T06:34:43.545Z",
+      "lastSeen": "2026-07-02T06:39:18.116Z",
+      "lastUpdated": "2026-07-02T06:39:18.116Z"
     },
     {
       "id": "57aaa9b5-0aa9-4c8e-be37-f2b48b2f71b7",
@@ -131,9 +161,9 @@ const ACHIEVEMENTS_SEED = {
       "title": "Ultimate Go Prog",
       "issuer": "O'Reilly Media",
       "issuerKey": "oreilly",
-      "image": "https://images.credly.com/images/ef3cd66b-0853-4ef4-a114-cd0bf0a8ef36/7e57a719-ca13-4fa8-8c1d-8b5341181b4f.png",
+      "image": "https://images.credly.com/images/de7e399e-cb13-4fce-9501-6f28b72b3ffa/7e57a719-ca13-4fa8-8c1d-8b5341181b4f.png",
       "verifyUrl": "https://www.credly.com/badges/57aaa9b5-0aa9-4c8e-be37-f2b48b2f71b7",
-      "publicUrl": "https://www.credly.com/org/o-reilly-media/badge/ultimate-go-prog",
+      "publicUrl": "https://www.credly.com/badges/57aaa9b5-0aa9-4c8e-be37-f2b48b2f71b7/public_url",
       "issueDate": "2025-01-01",
       "dateLabel": "Jan 2025",
       "description": "The holder of this badge has completed the following course by Pearson. The holder of this badge is capable of understanding and implementing advanced concepts in the Go programming language, including language syntax, design, concurrency, testing, and profiling. They are also skilled in software design and best practices.",
@@ -144,8 +174,8 @@ const ACHIEVEMENTS_SEED = {
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T11:51:58.671Z",
-      "lastUpdated": "2026-07-01T11:51:43.206Z"
+      "lastSeen": "2026-07-02T06:39:18.116Z",
+      "lastUpdated": "2026-07-02T06:39:18.116Z"
     },
     {
       "id": "5beae43e-dc74-4e27-b0a2-30ad655a9d16",
@@ -155,7 +185,7 @@ const ACHIEVEMENTS_SEED = {
       "issuerKey": "aws",
       "image": "https://images.credly.com/images/2d84e428-9078-49b6-a804-13c15383d0de/image.png",
       "verifyUrl": "https://www.credly.com/badges/5beae43e-dc74-4e27-b0a2-30ad655a9d16",
-      "publicUrl": "https://www.credly.com/org/amazon-web-services/badge/aws-certified-solutions-architect-professional",
+      "publicUrl": "https://www.credly.com/badges/5beae43e-dc74-4e27-b0a2-30ad655a9d16/public_url",
       "issueDate": "2024-04-11",
       "dateLabel": "Apr 2024",
       "description": "Earners of this certification have an extensive understanding of designing technical strategies to accomplish specific business goals. They demonstrated the ability to balance best practices and trade-offs based on business context. Badge owners are able to design solutions across multiple platforms and providers.",
@@ -173,8 +203,8 @@ const ACHIEVEMENTS_SEED = {
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T11:51:58.671Z",
-      "lastUpdated": "2026-07-01T11:51:43.206Z"
+      "lastSeen": "2026-07-02T06:39:18.116Z",
+      "lastUpdated": "2026-07-02T06:39:18.116Z"
     },
     {
       "id": "5d24b265-952c-45d9-a85f-03ccee0ba140",
@@ -201,10 +231,41 @@ const ACHIEVEMENTS_SEED = {
         "Scalability",
         "workload migration"
       ],
-      "active": true,
+      "active": false,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T11:51:58.671Z",
-      "lastUpdated": "2026-07-01T11:51:43.206Z"
+      "lastSeen": "2026-07-01T12:00:13.465Z",
+      "lastUpdated": "2026-07-01T11:51:43.206Z",
+      "deactivatedAt": "2026-07-01T16:56:47.669Z"
+    },
+    {
+      "id": "a2c1f086-8814-4c16-a7ac-e1182ae5a909",
+      "provider": "credly",
+      "title": "Professional Cloud Architect Certification",
+      "issuer": "Google Cloud",
+      "issuerKey": "gcloud",
+      "image": "https://images.credly.com/images/71c579e0-51fd-4247-b493-d2fa8167157a/image.png",
+      "verifyUrl": "https://www.credly.com/badges/a2c1f086-8814-4c16-a7ac-e1182ae5a909",
+      "publicUrl": "https://www.credly.com/badges/a2c1f086-8814-4c16-a7ac-e1182ae5a909/public_url",
+      "issueDate": "2024-02-06",
+      "dateLabel": "Feb 2024",
+      "description": "Professional Cloud Architects enable organizations to leverage Google Cloud technologies. With a thorough understanding of cloud architecture and Google Cloud, they design, develop, and manage robust, secure, scalable, highly available, and dynamic solutions to drive business objectives.",
+      "skills": [
+        "Cloud Architecture",
+        "Cloud Computing",
+        "Cloud Security",
+        "Cloud Storage",
+        "Databases",
+        "GKE",
+        "Google Cloud Platform (GCP)",
+        "Identity And Access Management (IAM)",
+        "Networking",
+        "Scalability",
+        "workload migration"
+      ],
+      "active": true,
+      "firstSeen": "2026-07-01T16:56:47.669Z",
+      "lastSeen": "2026-07-02T06:39:18.116Z",
+      "lastUpdated": "2026-07-02T06:39:18.116Z"
     },
     {
       "id": "1458cad3-a85c-4f96-8cab-1769dadaf27f",
@@ -214,7 +275,7 @@ const ACHIEVEMENTS_SEED = {
       "issuerKey": "gcloud",
       "image": "https://images.credly.com/images/614465c6-1d80-4ae6-a323-753de224422a/image.png",
       "verifyUrl": "https://www.credly.com/badges/1458cad3-a85c-4f96-8cab-1769dadaf27f",
-      "publicUrl": "https://www.credly.com/org/google-cloud/badge/professional-cloud-developer-certification",
+      "publicUrl": "https://www.credly.com/badges/1458cad3-a85c-4f96-8cab-1769dadaf27f/public_url",
       "issueDate": "2023-12-31",
       "dateLabel": "Dec 2023",
       "description": "A Professional Cloud Developer builds scalable and highly available applications using Google-recommended tools and best practices. This individual has experience with cloud-native applications, developer tools, managed services, and next-generation databases. A Professional Cloud Developer also has proficiency with at least one general-purpose programming language and instruments their code to produce metrics, logs, and traces.",
@@ -234,8 +295,8 @@ const ACHIEVEMENTS_SEED = {
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T11:51:58.671Z",
-      "lastUpdated": "2026-07-01T11:51:43.206Z"
+      "lastSeen": "2026-07-02T06:39:18.116Z",
+      "lastUpdated": "2026-07-02T06:39:18.116Z"
     }
   ]
 };

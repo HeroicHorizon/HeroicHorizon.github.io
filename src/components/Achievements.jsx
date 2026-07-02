@@ -23,7 +23,7 @@ function IssuerIcon({ issuerKey }) {
     width: '18px', height: '18px', display: 'inline-flex',
     alignItems: 'center', justifyContent: 'center', flexShrink: 0,
   };
-  if (['gcloud', 'aws', 'kubernetes'].includes(issuerKey)) {
+  if (['gcloud', 'aws', 'kubernetes', 'anthropic'].includes(issuerKey)) {
     return <span style={box}><StackIcon name={issuerKey} style={{ width: '100%', height: '100%' }} /></span>;
   }
   if (issuerKey === 'oreilly') {
@@ -230,10 +230,11 @@ export default function Achievements() {
   const [store, setStore] = useState(SEED);
   const [syncState, setSyncState] = useState('idle'); // idle | syncing | success | failed
 
-  // Load the live store on mount (falls back to the bundled seed on failure).
+  // Load the live store on mount. Cache-bust so a freshly-synced badge shows
+  // immediately instead of waiting for the browser/CDN cache to expire.
   useEffect(() => {
     let cancelled = false;
-    fetchStore()
+    fetchStore({ bustCache: true })
       .then((data) => { if (!cancelled && data?.badges) setStore(data); })
       .catch(() => { /* keep seed */ });
     return () => { cancelled = true; };

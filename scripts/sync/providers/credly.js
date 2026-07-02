@@ -8,6 +8,7 @@ const ISSUER_KEYS = [
   { key: 'gcloud', match: /google cloud/i },
   { key: 'aws', match: /amazon web services|aws/i },
   { key: 'oreilly', match: /o'?reilly/i },
+  { key: 'anthropic', match: /anthropic/i },
   { key: 'microsoft', match: /microsoft|azure/i },
   { key: 'kubernetes', match: /cloud native computing|cncf|kubernetes/i },
   { key: 'hashicorp', match: /hashicorp/i },
@@ -55,8 +56,9 @@ function normalizeBadge(raw) {
     image: raw.image_url || t.image_url || (t.image && t.image.url) || '',
     // Credential verification URL = the earner's specific, verifiable badge page.
     verifyUrl: `https://www.credly.com/badges/${id}`,
-    // Public badge URL = the badge template's public page (falls back to the earner URL).
-    publicUrl: t.url || `https://www.credly.com/badges/${id}/public_url`,
+    // Public badge URL = the earner's own public badge page (always well-formed;
+    // avoids org-template URLs that can contain placeholder slugs like /org/xxx/).
+    publicUrl: `https://www.credly.com/badges/${id}/public_url`,
     issueDate,
     dateLabel: formatDateLabel(issueDate),
     description: (t.description || '').trim(),
