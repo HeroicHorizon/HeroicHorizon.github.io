@@ -258,7 +258,7 @@ export default function Achievements() {
   const badges = (store.badges || [])
     .filter((b) => b.active !== false)
     .slice()
-    .sort((a, b) => (b.issueDate || '').localeCompare(a.issueDate || ''));
+    .sort((a, b) => (a.title || '').localeCompare(b.title || '', undefined, { sensitivity: 'base' }));
 
   return (
     <section id="achievements" style={{ padding: '7rem 0', background: 'rgba(15,23,42,0.4)' }}>
