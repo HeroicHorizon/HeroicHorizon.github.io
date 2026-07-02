@@ -1,15 +1,15 @@
 {
   "version": 1,
-  "lastSynced": "2026-07-01T23:59:32.262Z",
+  "lastSynced": "2026-07-02T03:27:22.653Z",
   "status": "success",
   "providers": {
     "credly": {
       "status": "success",
-      "lastSynced": "2026-07-01T23:59:32.262Z",
+      "lastSynced": "2026-07-02T03:27:22.652Z",
       "error": null,
       "source": "https://www.credly.com/users/balaji-dongare.28c183bc/badges.json",
       "cache": {
-        "etag": "W/\"9dcdee480d8c0b757fc8bd3cbe59c9c4\"",
+        "etag": "W/\"b1c7f8a7b7008855f5d8fff672119c41\"",
         "lastModified": null
       }
     }
@@ -43,7 +43,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T23:59:32.262Z",
+      "lastSeen": "2026-07-02T03:27:22.652Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     },
     {
@@ -65,7 +65,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T23:59:32.262Z",
+      "lastSeen": "2026-07-02T03:27:22.652Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     },
     {
@@ -87,7 +87,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T23:59:32.262Z",
+      "lastSeen": "2026-07-02T03:27:22.652Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     },
     {
@@ -109,7 +109,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T23:59:32.262Z",
+      "lastSeen": "2026-07-02T03:27:22.652Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     },
     {
@@ -132,7 +132,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T23:59:32.262Z",
+      "lastSeen": "2026-07-02T03:27:22.652Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     },
     {
@@ -154,7 +154,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T23:59:32.262Z",
+      "lastSeen": "2026-07-02T03:27:22.652Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     },
     {
@@ -183,7 +183,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T23:59:32.262Z",
+      "lastSeen": "2026-07-02T03:27:22.652Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     },
     {
@@ -244,7 +244,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T16:56:47.669Z",
-      "lastSeen": "2026-07-01T23:59:32.262Z",
+      "lastSeen": "2026-07-02T03:27:22.652Z",
       "lastUpdated": "2026-07-01T16:56:47.669Z"
     },
     {
@@ -275,7 +275,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-07-01T23:59:32.262Z",
+      "lastSeen": "2026-07-02T03:27:22.652Z",
       "lastUpdated": "2026-07-01T11:51:43.206Z"
     }
   ]
