@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "lastSynced": "2026-09-25T14:13:21.304Z",
+  "lastSynced": "2026-09-25T18:58:27.591Z",
   "status": "success",
   "providers": {
     "credly": {
       "status": "success",
-      "lastSynced": "2026-09-25T14:13:21.304Z",
+      "lastSynced": "2026-09-25T18:58:27.591Z",
       "error": null,
       "source": "https://www.credly.com/users/balaji-dongare.28c183bc/badges.json",
       "cache": {
@@ -19,7 +19,7 @@
     "active": 10,
     "inactive": 1,
     "added": 0,
-    "updated": 0,
+    "updated": 1,
     "deactivated": 0
   },
   "badges": [
@@ -43,7 +43,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-09-25T14:13:21.303Z",
+      "lastSeen": "2026-09-25T18:58:27.590Z",
       "lastUpdated": "2026-07-02T06:39:18.116Z"
     },
     {
@@ -65,7 +65,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-09-25T14:13:21.303Z",
+      "lastSeen": "2026-09-25T18:58:27.590Z",
       "lastUpdated": "2026-09-09T18:03:17.313Z"
     },
     {
@@ -87,7 +87,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-09-25T14:13:21.303Z",
+      "lastSeen": "2026-09-25T18:58:27.590Z",
       "lastUpdated": "2026-07-02T06:39:18.116Z"
     },
     {
@@ -109,7 +109,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-09-25T14:13:21.303Z",
+      "lastSeen": "2026-09-25T18:58:27.590Z",
       "lastUpdated": "2026-07-02T06:39:18.116Z"
     },
     {
@@ -132,7 +132,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-09-25T14:13:21.303Z",
+      "lastSeen": "2026-09-25T18:58:27.590Z",
       "lastUpdated": "2026-07-02T06:39:18.116Z"
     },
     {
@@ -162,7 +162,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-02T06:34:43.545Z",
-      "lastSeen": "2026-09-25T14:13:21.303Z",
+      "lastSeen": "2026-09-25T18:58:27.590Z",
       "lastUpdated": "2026-07-02T06:39:18.116Z"
     },
     {
@@ -171,12 +171,12 @@
       "title": "Ultimate Go Prog",
       "issuer": "O'Reilly Media",
       "issuerKey": "oreilly",
-      "image": "https://images.credly.com/images/de7e399e-cb13-4fce-9501-6f28b72b3ffa/7e57a719-ca13-4fa8-8c1d-8b5341181b4f.png",
+      "image": "https://images.credly.com/images/0cc01bcc-6408-44fd-ab97-0b1ce5b20b65/7e57a719-ca13-4fa8-8c1d-8b5341181b4f.png",
       "verifyUrl": "https://www.credly.com/badges/57aaa9b5-0aa9-4c8e-be37-f2b48b2f71b7",
       "publicUrl": "https://www.credly.com/badges/57aaa9b5-0aa9-4c8e-be37-f2b48b2f71b7/public_url",
       "issueDate": "2025-01-01",
       "dateLabel": "Jan 2025",
-      "description": "The holder of this badge has completed the following course by Pearson. The holder of this badge is capable of understanding and implementing advanced concepts in the Go programming language, including language syntax, design, concurrency, testing, and profiling. They are also skilled in software design and best practices.",
+      "description": "The holder of this badge has completed the following course by Pearson. The holder of this badge is capable of a deep and comprehensive understanding of the Go programming language, including its syntax, design, and implementation. They are skilled in concurrent software design, testing, tracing, and profiling, and can effectively design and develop software using Go.",
       "skills": [
         "Go",
         "Programming Fundamentals",
@@ -184,8 +184,8 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-09-25T14:13:21.303Z",
-      "lastUpdated": "2026-07-02T06:39:18.116Z"
+      "lastSeen": "2026-09-25T18:58:27.590Z",
+      "lastUpdated": "2026-09-25T18:58:27.590Z"
     },
     {
       "id": "5beae43e-dc74-4e27-b0a2-30ad655a9d16",
@@ -213,7 +213,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-09-25T14:13:21.303Z",
+      "lastSeen": "2026-09-25T18:58:27.590Z",
       "lastUpdated": "2026-09-09T18:03:17.313Z"
     },
     {
@@ -274,7 +274,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T16:56:47.669Z",
-      "lastSeen": "2026-09-25T14:13:21.303Z",
+      "lastSeen": "2026-09-25T18:58:27.590Z",
       "lastUpdated": "2026-07-02T06:39:18.116Z"
     },
     {
@@ -305,7 +305,7 @@
       ],
       "active": true,
       "firstSeen": "2026-07-01T11:51:43.206Z",
-      "lastSeen": "2026-09-25T14:13:21.303Z",
+      "lastSeen": "2026-09-25T18:58:27.590Z",
       "lastUpdated": "2026-09-09T18:03:17.313Z"
     }
   ]
